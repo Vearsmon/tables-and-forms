@@ -9,8 +9,49 @@
 <main>
     <h1>Найди себе друга!</h1>
 
-    <!--Форму размещай тут-->
-
+    <form action="/pets/orders" method="POST">
+		<label for="name">Имя хозяина:</label>
+		<input type="text" id="name" name="name" placeholder="Введите ваше имя" minlength="3" maxlength="50" title="Имя должно иметь длину от 3 до 50 символов" required><br>
+		
+		<label for="gender">Пол питомца:</label>
+			<input value="boy" type="radio" name="gender" required>Мальчик
+			<input value="girl" type="radio" name="gender">Девочка
+			<input value="none" type="radio" name="gender">Не важно
+		</label><br>
+		
+		<label for="petType">Тип животного:</label>
+		<select id="petType" name="petType">
+			<option value="cat" selected>Кот</option>
+			<option value="dog">Собака</option>
+			<option value="tiger">Тигр</option>
+		</select><br>
+		
+		<label for="eyeColor">Цвет глаз:</label>
+		<input type="color" id="eyeColor" name="eyeColor" placeholder="Укажите цвет глаз" pattern="#[A-Fa-f0-9]{6}" title="Введите цвет в формате HEX"><br>
+		
+		<label for="tailLength">Длина хвоста:</label>
+		<input type="number" id="tailLength" name="tailLength" class="numberInput" placeholder="Укажите длину хвоста" min="7" max="120" required><br>
+		<style>
+			input.numberInput {
+				width: 150px;
+			}
+		</style>
+		
+		<label for="dateOfBirth">Дата рождения:</label>
+		<input type="date" id="dateOfBirth" name="dateOfBirth" required><br>
+		
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email" placeholder="Введите ваш email" required><br>
+		
+		<label for="phone">Телефон:</label>
+		<input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required><br>
+		
+		<input type="checkbox" id="rules" name="rules" value="true" required>
+		<label for="rules">Я согласен с правилами</label><br>
+		
+		<button type="submit">Отправить</button>
+		<button type="reset">Сбросить</button>
+	</form>
 </main>
 </body>
 </html>
